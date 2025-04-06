@@ -12,6 +12,35 @@
       text-align: center;
       padding: 40px 20px;
       margin: 0;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #ffffffee;
+      padding: 20px 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.8rem;
+      color: #003366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0056b3;
     }
     h1 {
       font-size: 3.5rem;
@@ -125,6 +154,25 @@
       color: #444;
       font-size: 1.4rem;
     }
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #007bff;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -132,67 +180,64 @@
   </style>
 </head>
 <body>
-  <h1>SmartStoxVest</h1>
-  <p>Your AI-powered investment assistant for smart, secure, and strategic financial decisions – short, medium, and long-term.</p>
-  <p class="beta-tag">🚧 Currently in Free Beta – All features unlocked for early users!</p>
-  <a href="/app" class="button">🚀 Launch the App</a>
-  <p class="disclaimer">You’ll be securely redirected to our AI app hosted on Streamlit Cloud.</p>
+  <header>
+    <a href="#" class="logo">SmartStoxVest</a>
+    <nav>
+      <a href="#mission">Mission</a>
+      <a href="#team">Team</a>
+      <a href="#features">Features</a>
+      <a href="#join">Join Us</a>
+    </nav>
+  </header>
 
-  <div class="section">
+  <!-- Existing Content -->
+  <section class="section" id="mission">
     <h2>Our Mission</h2>
     <p>At SmartStoxVest, our mission is to democratize smart investing by equipping every individual with AI-powered tools to make data-driven financial decisions. We believe the future of finance should be transparent, intelligent, and accessible to everyone.</p>
-  </div>
+  </section>
 
-  <div class="section">
+  <section class="section" id="team">
     <h2>About the Team</h2>
-    <p>We're a passionate team of tech consultants, data scientists, and financial enthusiasts who are obsessed with simplifying complex investment strategies. Backed by years of experience in enterprise solutions and emerging AI tech, we’re committed to building intuitive tools that empower people to grow their wealth with confidence.</p>
-  </div>
+    <p>We’re a passionate team of tech consultants, data scientists, and financial enthusiasts who are obsessed with simplifying complex investment strategies. Backed by years of experience in enterprise solutions and emerging AI tech, we’re committed to building intuitive tools that empower people to grow their wealth with confidence.</p>
+  </section>
 
-  <div class="section">
+  <section class="section" id="features">
     <h2>What You Can Do with SmartStoxVest</h2>
-    <p>
-      Our platform is designed to give you an edge in every phase of your investment journey:
-    </p>
-    <ul style="list-style: none; padding: 0; font-size: 1.05rem; color: #333; text-align: left; max-width: 600px; margin: 0 auto;">
-      <li>📊 Analyze stocks using technical indicators</li>
-      <li>🤖 Leverage AI-driven short, medium, and long-term predictions</li>
+    <ul style="text-align: left; display: inline-block; font-size: 1.1rem;">
+      <li>💼 Analyze stocks using technical indicators</li>
+      <li>📊 Leverage AI-driven short, medium, and long-term predictions</li>
       <li>🧠 Receive strategy recommendations based on your risk profile</li>
-      <li>📅 Backtest historical data to validate strategies</li>
+      <li>📈 Backtest historical data to validate strategies</li>
       <li>💡 Make smarter decisions with confidence and clarity</li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>Why We Built It</h2>
-    <p>We know investing can feel overwhelming, especially with the flood of conflicting advice and data. SmartStoxVest was created to cut through the noise using advanced AI—so whether you're a curious beginner or a seasoned investor, you're never making decisions in the dark.</p>
-  </div>
-
-  <div class="section">
-    <h2>What Our Early Users Are Saying</h2>
-    <div class="testimonial">“This is the first time I feel like I actually understand what's happening with my investments. The AI insights are a game changer!” — Alex R.</div>
-    <div class="testimonial">“I’ve used expensive tools before, but SmartStoxVest nailed it with simplicity and real-time strategy suggestions.” — Priya M.</div>
-    <div class="testimonial">“Finally, a dashboard that gives me confidence to act, not just analyze. Well done, team!” — James T.</div>
-  </div>
-
-  <div class="section">
-    <h2>📬 Join Our Waitlist</h2>
-    <p>Want early access to premium features, updates, and news? Drop your email below and be the first to know!</p>
+  <section class="section" id="join">
+    <h2>Join Our Waitlist</h2>
+    <p>Want early access to premium features, updates, and more? Drop your email below and be the first to know!</p>
     <div class="form-container">
       <form action="https://formspree.io/f/myzebznz" method="POST">
-        <input type="email" name="email" placeholder="Your email address" required />
-        <input type="submit" value="Join Now" />
+        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="submit" value="Join Now">
       </form>
     </div>
-  </div>
+  </section>
 
-  <div class="footer">
-    <p>Have feedback or found a bug? <a href="mailto:feedback@smartstoxvest.com">Email us</a></p>
-    <p>Last updated: April 2025</p>
-    <div class="social-links">
-      <p>Share SmartStoxVest:</p>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://smartstoxvest.com" target="_blank">🔗 LinkedIn</a>
-      <a href="https://twitter.com/intent/tweet?url=https://smartstoxvest.com&text=Check%20out%20this%20awesome%20AI%20investment%20tool!" target="_blank">🐦 Twitter</a>
-    </div>
-  </div>
+  <!-- Scroll to Top Button -->
+  <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">⬆</div>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
