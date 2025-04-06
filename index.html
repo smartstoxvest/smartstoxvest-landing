@@ -43,9 +43,10 @@
       color: #0056b3;
     }
     h1 {
-      font-size: 3.5rem;
+      font-size: 2rem;
       margin-bottom: 0.5rem;
       color: #003366;
+      word-wrap: break-word;
     }
     p {
       font-size: 1.25rem;
@@ -156,6 +157,25 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.25rem !important;
+      }
+      .section {
+        padding: 20px;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
+      p, .section p {
+        font-size: 1rem;
+      }
+      .button {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -171,7 +191,7 @@
 
   <section class="section">
     <h1>SmartStoxVest</h1>
-    <p>Your AI-powered investment assistant for smart, secure, and strategic financial decisions – short, medium, and long-term.</p>
+    <p>Your AI-powered investment assistant for smart, secure, and strategic decisions.</p>
     <p class="beta-tag">🚀 Currently in Free Beta – All features unlocked for early users!</p>
     <a href="/app" class="button">Launch the App</a>
     <p class="disclaimer">You’ll be securely redirected to our AI app hosted on Streamlit Cloud.</p>
