@@ -10,7 +10,7 @@
       background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
       color: #1a1a1a;
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
       margin: 0;
     }
     h1 {
@@ -21,9 +21,6 @@
     p {
       font-size: 1.25rem;
       margin: 0 0 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
       color: #333;
     }
     .button {
@@ -41,7 +38,7 @@
       background-color: #0056b3;
     }
     .disclaimer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 0.95rem;
       color: #555;
     }
@@ -50,6 +47,62 @@
       font-size: 0.95rem;
       color: #ff5722;
       font-weight: bold;
+    }
+    .section {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease-in;
+    }
+    .section h2 {
+      color: #003366;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .section p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    .testimonial {
+      font-style: italic;
+      background-color: #f9f9f9;
+      border-left: 5px solid #007bff;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+    .form-container {
+      background-color: #f9f9f9;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 10px;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    input[type="email"] {
+      padding: 12px;
+      width: 70%;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
     }
     .footer {
       margin-top: 60px;
@@ -72,55 +125,9 @@
       color: #444;
       font-size: 1.4rem;
     }
-    .section {
-      margin-top: 60px;
-    }
-    .section h2 {
-      color: #003366;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-    .section p {
-      font-size: 1.1rem;
-      color: #333;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-    .testimonial {
-      font-style: italic;
-      background-color: #ffffffcc;
-      border-radius: 10px;
-      padding: 20px;
-      max-width: 700px;
-      margin: 20px auto;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .form-container {
-      background-color: #fff;
-      padding: 30px;
-      margin: 0 auto 50px;
-      border-radius: 10px;
-      max-width: 500px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    input[type="email"] {
-      padding: 10px;
-      width: 70%;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    input[type="submit"] {
-      padding: 10px 20px;
-      font-size: 1rem;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #0056b3;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -146,7 +153,7 @@
     <p>
       Our platform is designed to give you an edge in every phase of your investment journey:
     </p>
-    <ul style="list-style: none; padding: 0; font-size: 1.05rem; color: #333;">
+    <ul style="list-style: none; padding: 0; font-size: 1.05rem; color: #333; text-align: left; max-width: 600px; margin: 0 auto;">
       <li>📊 Analyze stocks using technical indicators</li>
       <li>🤖 Leverage AI-driven short, medium, and long-term predictions</li>
       <li>🧠 Receive strategy recommendations based on your risk profile</li>
