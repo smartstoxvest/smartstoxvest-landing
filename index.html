@@ -270,6 +270,8 @@
   <p style="margin: 0; color: #f0f0f0;">Have questions? Email us at <a href="mailto:support@smartstoxvest.com" style="color: #f0f0f0; text-decoration: underline;">support@smartstoxvest.com</a></p>
 </footer>
 
+<div id="scrollToTop" class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
+
 <style>
   html {
     scroll-behavior: smooth;
@@ -279,12 +281,37 @@
     text-decoration: underline;
     color: #0056b3 !important;
   }
+  .scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
 </style>
 
 <script>
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
+    const scrollBtn = document.getElementById('scrollToTop');
 
     let current = '';
     sections.forEach(section => {
@@ -301,7 +328,15 @@
         link.classList.add('active');
       }
     });
+
+    // Show or hide scroll to top button
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
   });
 </script>
+
 </body>
 </html>
