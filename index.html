@@ -86,6 +86,42 @@
       max-width: 800px;
       margin: 0 auto 40px;
     }
+    .testimonial {
+      font-style: italic;
+      background-color: #ffffffcc;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 700px;
+      margin: 20px auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      margin: 0 auto 50px;
+      border-radius: 10px;
+      max-width: 500px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="email"] {
+      padding: 10px;
+      width: 70%;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -122,6 +158,24 @@
   <div class="section">
     <h2>Why We Built It</h2>
     <p>We know investing can feel overwhelming, especially with the flood of conflicting advice and data. SmartStoxVest was created to cut through the noise using advanced AI—so whether you're a curious beginner or a seasoned investor, you're never making decisions in the dark.</p>
+  </div>
+
+  <div class="section">
+    <h2>What Our Early Users Are Saying</h2>
+    <div class="testimonial">“This is the first time I feel like I actually understand what's happening with my investments. The AI insights are a game changer!” — Alex R.</div>
+    <div class="testimonial">“I’ve used expensive tools before, but SmartStoxVest nailed it with simplicity and real-time strategy suggestions.” — Priya M.</div>
+    <div class="testimonial">“Finally, a dashboard that gives me confidence to act, not just analyze. Well done, team!” — James T.</div>
+  </div>
+
+  <div class="section">
+    <h2>📬 Join Our Waitlist</h2>
+    <p>Want early access to premium features, updates, and news? Drop your email below and be the first to know!</p>
+    <div class="form-container">
+      <form action="https://formspree.io/f/myzebznz" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required />
+        <input type="submit" value="Join Now" />
+      </form>
+    </div>
   </div>
 
   <div class="footer">
