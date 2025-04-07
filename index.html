@@ -199,9 +199,10 @@
     <div>🔒 Privacy-First Analysis</div>
     <div>🧠 Smart Recommendations</div>
   </section>
+  
    <section id="news-ticker" style="background-color: #003366; color: #ffffff; padding: 10px 20px; font-size: 1rem; overflow: hidden; white-space: nowrap;">
-  <marquee behavior="scroll" direction="left">📢 Market Update: Dow Jones rises 1.2% after Fed signals rate pause • 📉 Nasdaq dips 0.5% amid tech earnings • 🧠 SmartStoxVest AI modules updated with latest financial indicators</marquee>
-  </section>
+     <div id="market-news" style="display: flex; gap: 50px;"></div>
+   </section>
   
   <section class="section">
     <h1>SmartStoxVest</h1>
@@ -302,6 +303,25 @@
     <strong>📌 Disclaimer:</strong> Investing in the stock market involves risks, including potential loss of principal. The information and tools provided by SmartStoxVest are for educational and informational purposes only and should not be construed as financial advice. Always do your own research and consult with a certified financial advisor before making investment decisions.
  </section>
 
+  <script>
+  const apiKey = '6R6sXGpNddIJVUomYiszwiuR1AKK9E3bWHvGDPqp'; // Replace with your MarketAux API key
+  const apiUrl = `https://api.marketaux.com/v1/news/all?api_token=${apiKey}&language=en&limit=5`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      const newsTicker = document.getElementById('market-news');
+      newsTicker.innerHTML = '';
+      data.data.forEach(article => {
+        const newsItem = document.createElement('div');
+        newsItem.style.display = 'inline-block';
+        newsItem.style.marginRight = '50px';
+        newsItem.innerHTML = `<a href="${article.url}" target="_blank" style="color: white; text-decoration: none;">${article.title}</a>`;
+        newsTicker.appendChild(newsItem);
+      });
+    })
+    .catch(error => console.error('Error fetching news:', error));
+</script>
 <footer style="background-color: #003366; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.95rem;">
   <p style="margin-bottom: 10px; color: #ffffff">&copy; 2025 SmartStoxVest. All rights reserved.</p>
   <p style="margin-bottom: 10px; color: #ffffff">Made with <span style="color: #ff4757;">❤️</span> for investors. | <a href="#" style="color: #ffffff; text-decoration: underline;">Privacy Policy</a></p>
