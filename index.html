@@ -319,22 +319,19 @@
       tickerEl.innerHTML = "<span>📉 Failed to load news. Please try again later.</span>";
     }
   }
-  fetchMarketNews();
-</script>
+    fetchMarketNews();
+  </script>
 
 <style>
-  #market-news div {
-    animation: scroll-left 30s linear infinite;
-  }
   @keyframes scroll-left {
-    from {
+    0% {
       transform: translateX(100%);
     }
-    to {
+    100% {
       transform: translateX(-100%);
     }
   }
-</style>
+  </style>
 
 <footer style="background-color: #003366; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.95rem;">
   <p style="margin-bottom: 10px; color: #ffffff">&copy; 2025 SmartStoxVest. All rights reserved.</p>
