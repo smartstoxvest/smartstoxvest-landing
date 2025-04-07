@@ -305,22 +305,29 @@
 
   <script>
   const apiKey = '6R6sXGpNddIJVUomYiszwiuR1AKK9E3bWHvGDPqp'; // Replace with your MarketAux API key
-  const apiUrl = `https://api.marketaux.com/v1/news/all?api_token=${apiKey}&language=en&limit=5
+  const apiUrl = `https://api.marketaux.com/v1/news/all?api_token=${apiKey}&language=en&limit=8&published_after=${today}`;
   
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
       const newsTicker = document.getElementById('market-news');
       newsTicker.innerHTML = '';
-      data.data.forEach(article => {
-        const newsItem = document.createElement('div');
-        newsItem.style.display = 'inline-block';
-        newsItem.style.marginRight = '50px';
-        newsItem.innerHTML = `<a href="${article.url}" target="_blank" style="color: white; text-decoration: none;">${article.title}</a>`;
-        newsTicker.appendChild(newsItem);
-      });
+      if (data.data && data.data.length > 0) {
+        data.data.forEach(article => {
+          const newsItem = document.createElement('div');
+          newsItem.style.display = 'inline-block';
+          newsItem.style.marginRight = '50px';
+          newsItem.innerHTML = `<a href="${article.url}" target="_blank" style="color: white; text-decoration: none;">${article.title}</a>`;
+          newsTicker.appendChild(newsItem);
+        });
+      } else {
+        newsTicker.innerHTML = '<div style="color:white;">📭 No latest market headlines right now. Please check back later.</div>';
+      }
     })
-    .catch(error => console.error('Error fetching news:', error));
+    .catch(error => {
+      console.error('News API Error:', error);
+      document.getElementById('market-news').innerHTML = '<div style="color:white;">❗Unable to load news right now.</div>';
+    });
 </script>
   
   <style>
