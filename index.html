@@ -305,7 +305,9 @@
 
   <script>
   const apiKey = '6R6sXGpNddIJVUomYiszwiuR1AKK9E3bWHvGDPqp'; // Replace with your MarketAux API key
-  const apiUrl = `https://api.marketaux.com/v1/news/all?api_token=${apiKey}&language=en&limit=5`;
+  
+  const apiUrl = `https://api.marketaux.com/v1/news/all?api_token=${apiKey}&language=en&limit=8&filter_entities=true&entities=NASDAQ,LSE,NSE,NYSE&published_after=${new Date().toISOString().split('T')[0]}`;
+
 
   fetch(apiUrl)
     .then(response => response.json())
