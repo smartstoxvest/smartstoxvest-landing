@@ -307,10 +307,10 @@
   async function fetchMarketNews() {
     const tickerEl = document.getElementById("market-news");
     try {
-      const response = await fetch("https://api.marketaux.com/v1/news/all?categories=stock_markets&filter_entities=true&limit=5&api_token=6R6sXGpNddIJVUomYiszwiuR1AKK9E3bWHvGDPqp");
+      const response = await fetch("https://newsdata.io/api/1/news?apikey=pub_78891e18e9662d2b22fce0a07ddb5c9420c63&q=stock%20market&language=en");
       const data = await response.json();
-      if (data.data && data.data.length > 0) {
-        tickerEl.innerHTML = data.data.map(article => `<span>📢 ${article.title}</span>`).join("<span style='margin: 0 30px;'>|</span>");
+      if (data.results && data.results.length > 0) {
+        tickerEl.innerHTML = data.results.map(article => `<span>📢 ${article.title}</span>`).join("<span style='margin: 0 30px;'>|</span>");
       } else {
         tickerEl.innerHTML = "<span>📉 No latest market headlines right now. Please check back later.</span>";
       }
