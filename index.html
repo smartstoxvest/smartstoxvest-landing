@@ -322,6 +322,21 @@
     })
     .catch(error => console.error('Error fetching news:', error));
 </script>
+  
+  <style>
+  #market-news div {
+    animation: scroll-left 30s linear infinite;
+  }
+  @keyframes scroll-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
 <footer style="background-color: #003366; color: #ffffff; padding: 30px 20px; text-align: center; font-size: 0.95rem;">
   <p style="margin-bottom: 10px; color: #ffffff">&copy; 2025 SmartStoxVest. All rights reserved.</p>
   <p style="margin-bottom: 10px; color: #ffffff">Made with <span style="color: #ff4757;">❤️</span> for investors. | <a href="#" style="color: #ffffff; text-decoration: underline;">Privacy Policy</a></p>
