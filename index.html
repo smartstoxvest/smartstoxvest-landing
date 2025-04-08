@@ -187,9 +187,10 @@
   <nav>
     <a href="#mission">Mission</a>
     <a href="#team">Team</a>
-    <a href="#features">Features</a>
-    <a href="user-manual-guide.pdf" target="_blank" rel="noopener">User Manual Guide</a>
+    <a href="#features">Features</a>  
     <a href="#join">Join Us</a>
+    <a href="#feedback">Feedback</a>
+    <a href="user-manual-guide.pdf" target="_blank" rel="noopener">User Manual Guide</a>
   </nav>
 </header>
   
@@ -298,6 +299,27 @@
 <section id="disclaimer" style="background-color: #fff8e1; color: #795548; padding: 20px; max-width: 900px; margin: 30px auto; border-radius: 8px; border: 1px solid #ffe0b2; font-size: 0.95rem;">
     <strong>📌 Disclaimer:</strong> Investing in the stock market involves risks, including potential loss of principal. The information and tools provided by SmartStoxVest are for educational and informational purposes only and should not be construed as financial advice. Always do your own research and consult with a certified financial advisor before making investment decisions.
  </section>
+
+  <section id="feedback" class="section" style="text-align: center; padding: 40px 20px;">
+  <h2>We’d Love Your Feedback 💬</h2>
+  <p>Your thoughts help us make SmartStoxVest smarter. Tell us what’s great or what we can improve!</p>
+  <form action="https://formsubmit.co/smartstoxvest@gmail.com" method="POST" style="max-width: 500px; margin: 20px auto; display: flex; flex-direction: column; gap: 12px;">
+    <!-- Hidden Fields -->
+    <input type="hidden" name="_subject" value="New Feedback from SmartStoxVest Website">
+    <input type="hidden" name="_next" value="https://smartstoxvest.com/thank-you.html">
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Optional Fields -->
+    <input type="text" name="name" placeholder="Your name (optional)" style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    <input type="email" name="email" placeholder="Your email (optional)" style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+
+    <!-- Required Feedback -->
+    <textarea name="feedback" rows="5" required placeholder="Share your feedback..." style="padding: 12px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" style="padding: 12px 24px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer;">Send Feedback</button>
+  </form>
+</section>
 
   <script>
   async function fetchMarketNews() {
