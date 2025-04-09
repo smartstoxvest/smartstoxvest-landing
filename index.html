@@ -256,6 +256,40 @@
         padding: 12px 20px;
       }
     }
+    /* Ensure menu toggle button always visible on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #007bff;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
   </style>
 </head>
 
@@ -575,9 +609,10 @@
 
   toggleBtn.addEventListener('click', () => {
     navbar.classList.toggle('show');
-    toggleBtn.classList.toggle('open'); // add this line
+    toggleBtn.classList.toggle('open'); // make sure this line exists
   });
 </script>
+
 
 
 </body>
