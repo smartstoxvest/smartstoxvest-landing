@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SmartStoxVest – Smart Investment Decisions</title>
   <style>
+    :root {
+  scroll-padding-top: 80px;
+  }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
@@ -393,10 +397,13 @@
     scroll-behavior: smooth;
   }
   nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
-    color: #0056b3 !important;
+  font-weight: bold;
+  color: #007bff !important;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 3px;
+  transition: border 0.3s ease;
   }
+
   .scroll-top {
     position: fixed;
     bottom: 20px;
