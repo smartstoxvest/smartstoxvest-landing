@@ -325,26 +325,24 @@
 
   <section id="feedback" class="section" style="text-align: center; padding: 40px 20px;">
   <h2>We’d Love Your Feedback 💬</h2>
-  <p>Your input helps us build a better SmartStoxVest. Let us know what you think!</p>
-  <div style="max-width: 900px; margin: 30px auto;">
-    <div style="margin-bottom: 30px;">
-      <h3 style="margin-bottom: 10px; color: #003366;">Rate Your Experience</h3>
-      <div id="star-rating" style="font-size: 2rem; color: #ccc; cursor: pointer;">
-        <span data-star="1">★</span>
-        <span data-star="2">★</span>
-        <span data-star="3">★</span>
-        <span data-star="4">★</span>
-        <span data-star="5">★</span>
-    </div>
-    <p id="rating-value" style="margin-top: 10px; font-size: 1rem; color: #555;">Click a star to rate</p>
-    </div>
+  <p>Your thoughts help us make SmartStoxVest smarter. Tell us what’s great or what we can improve!</p>
+  <form action="https://formsubmit.co/smartstoxvest@gmail.com" method="POST" style="max-width: 500px; margin: 20px auto; display: flex; flex-direction: column; gap: 12px;">
+    <!-- Hidden Fields -->
+    <input type="hidden" name="_subject" value="New Feedback from SmartStoxVest Website">
+    <input type="hidden" name="_next" value="https://smartstoxvest.com/thank-you.html">
+    <input type="hidden" name="_captcha" value="false">
 
-    <iframe src="https://docs.google.com/forms/d/1ZOIzxxl7d6uGCVuxegl2HBXT5o6cPIn1ey7yoe0BRMw/preview"
-            width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
-      Loading…
-    </iframe>
-  </div>
-  </section>
+    <!-- Optional Fields -->
+    <input type="text" name="name" placeholder="Your name (optional)" style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+    <input type="email" name="email" placeholder="Your email (optional)" style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+
+    <!-- Required Feedback -->
+    <textarea name="feedback" rows="5" required placeholder="Share your feedback..." style="padding: 12px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" style="padding: 12px 24px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer;">Send Feedback</button>
+  </form>
+</section>
 
   <script>
   async function fetchMarketNews() {
