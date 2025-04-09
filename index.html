@@ -6,8 +6,8 @@
   <title>SmartStoxVest – Smart Investment Decisions</title>
   <style>
     :root {
-  scroll-padding-top: 80px;
-  }
+      scroll-padding-top: 80px;
+    }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +18,13 @@
       margin: 0;
       scroll-behavior: smooth;
     }
+
     header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       background-color: #ffffffee;
@@ -26,15 +32,33 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       z-index: 1000;
     }
+
     .logo {
       font-size: 1.8rem;
       color: #003366;
       font-weight: bold;
       text-decoration: none;
     }
+
+    #menu-toggle {
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      display: none;
+    }
+
     nav {
       margin-top: 10px;
     }
+
+    #navbar {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+    }
+
     nav a {
       margin: 0 15px;
       text-decoration: none;
@@ -43,20 +67,32 @@
       font-size: 1rem;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #0056b3;
     }
+
+    nav a.active {
+      font-weight: bold;
+      color: #007bff !important;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 3px;
+      transition: border 0.3s ease;
+    }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
       color: #003366;
       word-wrap: break-word;
     }
+
     p {
       font-size: 1.25rem;
       margin: 0 0 2rem;
       color: #333;
     }
+
     .button {
       padding: 15px 35px;
       font-size: 1.3rem;
@@ -68,20 +104,24 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
+
     .button:hover {
       background-color: #0056b3;
     }
+
     .disclaimer {
       margin-top: 30px;
       font-size: 0.95rem;
       color: #555;
     }
+
     .beta-tag {
       margin-top: 10px;
       font-size: 0.95rem;
       color: #ff5722;
       font-weight: bold;
     }
+
     .section {
       background: #fff;
       padding: 40px;
@@ -91,17 +131,20 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       animation: fadeIn 1s ease-in;
     }
+
     .section h2 {
       color: #003366;
       font-size: 2rem;
       margin-bottom: 10px;
     }
+
     .section p {
       font-size: 1.1rem;
       color: #333;
       max-width: 800px;
       margin: 0 auto 30px;
     }
+
     .testimonial {
       font-style: italic;
       background-color: #f9f9f9;
@@ -111,6 +154,7 @@
       max-width: 700px;
       margin: 20px auto;
     }
+
     .form-container {
       background-color: #f9f9f9;
       padding: 30px;
@@ -119,6 +163,7 @@
       max-width: 500px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
     input[type="email"] {
       padding: 12px;
       width: 70%;
@@ -126,6 +171,7 @@
       border-radius: 6px;
       border: 1px solid #ccc;
     }
+
     input[type="submit"] {
       padding: 12px 24px;
       font-size: 1rem;
@@ -135,9 +181,11 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
     input[type="submit"]:hover {
       background-color: #0056b3;
     }
+
     .scroll-top {
       position: fixed;
       bottom: 30px;
@@ -153,28 +201,56 @@
       opacity: 0;
       visibility: hidden;
     }
+
     .scroll-top.show {
       opacity: 1;
       visibility: visible;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media screen and (max-width: 600px) {
+    /* 🔽 Responsive hamburger nav */
+    @media (max-width: 768px) {
+      #menu-toggle {
+        display: block;
+      }
+
+      #navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      #navbar.show {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+      }
+
       h1 {
         font-size: 1.25rem !important;
       }
+
       .section {
         padding: 20px;
       }
+
       .section h2 {
         font-size: 1.5rem;
       }
+
       p, .section p {
         font-size: 1rem;
       }
+
       .button {
         font-size: 1rem;
         padding: 12px 20px;
@@ -182,21 +258,30 @@
     }
   </style>
 </head>
+
 <body>
 <header>
   <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;">
     <img src="logo.png" alt="SmartStoxVest Logo" style="height: 40px; vertical-align: middle;">
     <span style="font-size: 1.8rem; color: #003366; font-weight: bold;">SmartStoxVest</span>
   </a>
-  <nav>
+
+  <!-- Hamburger Menu Button (visible only on mobile) -->
+  <button id="menu-toggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+
+  <!-- Navigation Menu -->
+  <nav id="navbar">
     <a href="#mission">Mission</a>
     <a href="#team">Team</a>
-    <a href="#features">Features</a>  
+    <a href="#features">Features</a>
     <a href="#join">Join Us</a>
     <a href="#feedback">Feedback</a>
     <a href="user-manual-guide.pdf" target="_blank" rel="noopener">User Manual Guide</a>
   </nav>
 </header>
+
   
    <section id="news-ticker" style="background-color: #003366; color: #ffffff; padding: 10px 0; font-size: 1rem; overflow: hidden; white-space: nowrap;">
   <div style="display: inline-block; white-space: nowrap; animation: scroll-left 150s linear infinite;" id="market-news">
