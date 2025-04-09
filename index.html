@@ -304,6 +304,18 @@
   <h2>We’d Love Your Feedback 💬</h2>
   <p>Your input helps us build a better SmartStoxVest. Let us know what you think!</p>
   <div style="max-width: 900px; margin: 30px auto;">
+    <div style="margin-bottom: 30px;">
+      <h3 style="margin-bottom: 10px; color: #003366;">Rate Your Experience</h3>
+      <div id="star-rating" style="font-size: 2rem; color: #ccc; cursor: pointer;">
+        <span data-star="1">★</span>
+        <span data-star="2">★</span>
+        <span data-star="3">★</span>
+        <span data-star="4">★</span>
+        <span data-star="5">★</span>
+    </div>
+    <p id="rating-value" style="margin-top: 10px; font-size: 1rem; color: #555;">Click a star to rate</p>
+    </div>
+
     <iframe src="https://docs.google.com/forms/d/1ZOIzxxl7d6uGCVuxegl2HBXT5o6cPIn1ey7yoe0BRMw/preview"
             width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
       Loading…
@@ -420,7 +432,26 @@
     }
   });
 </script>
+<script>
+  const stars = document.querySelectorAll('#star-rating span');
+  const ratingText = document.getElementById('rating-value');
+  let selectedRating = 0;
 
+  stars.forEach((star) => {
+    star.addEventListener('click', () => {
+      selectedRating = star.getAttribute('data-star');
+      updateStars(selectedRating);
+      ratingText.innerText = `You rated this ${selectedRating} star${selectedRating > 1 ? 's' : ''}.`;
+    });
+  });
+
+  function updateStars(rating) {
+    stars.forEach((star) => {
+      const val = star.getAttribute('data-star');
+      star.style.color = val <= rating ? '#ffcc00' : '#ccc';
+    });
+  }
+</script>
 
 </body>
 </html>
