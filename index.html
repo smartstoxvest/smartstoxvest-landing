@@ -267,9 +267,12 @@
   </a>
 
   <!-- Hamburger Menu Button (visible only on mobile) -->
-  <button id="menu-toggle" aria-label="Toggle navigation">
-    ☰
+  <button id="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+  <span></span>
+  <span></span>
+  <span></span>
   </button>
+
 
   <!-- Navigation Menu -->
   <nav id="navbar">
@@ -572,8 +575,10 @@
 
   toggleBtn.addEventListener('click', () => {
     navbar.classList.toggle('show');
+    toggleBtn.classList.toggle('open'); // add this line
   });
 </script>
+
 
 </body>
 </html>
