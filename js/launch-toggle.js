@@ -4,7 +4,7 @@ if (launchContainer) {
   if (typeof launchEnabled !== "undefined" && launchEnabled) {
     launchContainer.innerHTML = `
       <a href="/app" class="button bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 rounded-lg shadow-md transition">
-        🚀 Launch the SmartStoxVest App
+        🚀 Launch SmartStoxVest App
       </a>
     `;
   } else {
