@@ -1,2 +1,2 @@
 // Toggle flag for app launch
-const launchEnabled = true;
+const launchEnabled = false;
